@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Alert</title>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Google Sans', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      padding: 60px 50px;
+      text-align: center;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.6s ease-out;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #f85149, #ff6b6b, #f85149);
+      background-size: 200% 100%;
+      animation: shimmer 3s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%, 100% { background-position: 200% 0; }
+      50% { background-position: -200% 0; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+      display: inline-block;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .shield-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: rgba(248, 81, 73, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    h1 {
+      color: #f85149;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: #f85149;
+      margin: 16px auto;
+      border-radius: 2px;
+    }
+    .message {
+      color: #e6edf3;
+      font-size: 36px;
+      font-weight: 700;
+      margin: 16px 0;
+      letter-spacing: -0.5px;
+    }
+    .message span {
+      display: inline-block;
+      background: linear-gradient(135deg, #f85149, #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .footer-msg {
+      color: #8b949e;
+      font-size: 18px;
+      font-style: italic;
+      border-top: 1px solid #30363d;
+      padding-top: 24px;
+      margin-top: 24px;
+    }
+    .footer-msg span {
+      color: #f85149;
+      font-weight: 600;
+      font-style: normal;
+    }
+    .sub-footer {
+      color: #484f58;
+      font-size: 12px;
+      margin-top: 20px;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="shield-icon">🤣</div>
+    <h1>Booyah</h1>
+    <div class="divider"></div>
+    <div class="message">
+      <span>Sorry, You Are Hacked</span>
+    </div>
+    <div class="footer-msg">
+      That's why <span>don't trust me</span>
+    </div>
+    <div class="sub-footer">• This is a security awareness test •</div>
+  </div>
+</body>
+</html>

